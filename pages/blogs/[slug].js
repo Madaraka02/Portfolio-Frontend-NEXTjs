@@ -11,9 +11,9 @@ import { AiOutlineSelect } from 'react-icons/ai'
 
 
 
-export default function ProjectPage({project}) {
+export default function BlogPage({blog}) {
 //   const projects = props.data
-  console.log(project)
+  console.log(blog)
   
   return (
     <div className={styles.container}>
@@ -25,22 +25,22 @@ export default function ProjectPage({project}) {
       <Navbar/>
       <div className='w-full  p-2 flex items-center py-48 mb-10'>
         <div className='max-w-[1240px] mx-auto md:grid grid-cols-3 gap-8'>
-            <div className='shadow-2xl z-90'>
+            <div className='col-span-2'>
             <p className='text-xs uppercase text-[#3d3d3d]'> </p>
-                <p className='uppercase p-5 text-[#64ffda] py-4'>{project.title}</p>
+                <p className='uppercase text-[#64ffda] py-4'>{blog.title}</p>
 
-                <p className=' text-[#8892b0]  py-2 p-5 '>{project.description}</p>
-                <Link href={project.link}>
+                <p className=' text-[#8892b0]  py-2 p-5 shadow-2xl z-[900]'>{blog.content}</p>
+                {/* <Link href={project.link}>
                 <div className='py-2 flex justify-items-start cursor-pointer '>
                     <AiOutlineSelect size={30}/>
-                    <p className='p-5 ml-2'>View live link</p>
+                    <p className='ml-2'>View live link</p>
                 </div>
-                </Link>
+                </Link> */}
  
             </div>
-            <div className='w-full col-span-2 h-full m-auto flex items-center justify-center p-4 border-b-2 border-r-2 opacity-25 border-green-600 hover:scale-105 ease-in duration-500 shadow-xl hover:opacity-100 '>
+            <div className='w-full h-full m-auto flex items-center justify-center p-4 border-b-2 border-r-2 opacity-25 border-green-600 hover:scale-105 ease-in duration-500 shadow-xl hover:opacity-100 '>
                 
-                <img src={project.image} className='w-full h-full' alt={project.title} />
+                <img src={blog.image} className='w-full h-full' alt={blog.title} />
             </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function ProjectPage({project}) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-    const { data } = await Axios.get(`http://127.0.0.1:8000/victor/portfolio/api/v1/projects/${params.slug}`);
+    const { data } = await Axios.get(`http://127.0.0.1:8000/victor/portfolio/api/v1/blogs/${params.slug}`);
   
     if (!data) {
       return {
@@ -62,11 +62,11 @@ export const getServerSideProps = async ({ params }) => {
       };
     }
   
-    const project = data;
-    console.log(project)
+    const blog = data;
+    console.log(blog)
     return {
       props: {
-        project,
+        blog,
       },
     };
   };

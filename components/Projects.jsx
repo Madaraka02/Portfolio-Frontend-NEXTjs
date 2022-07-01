@@ -2,8 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Axios from 'axios'
+import { useRouter } from 'next/router';
 
-export default function Projects() {
+export default function Projects(props) {
+    const projects = props.data
+    const router =useRouter()
     
 
   return (
@@ -12,7 +15,7 @@ export default function Projects() {
         <p className='text-xs uppercase text-[#3d3d3d]'> WHAT i have Created</p>
         <p className='text-white py-4'>
             <span className='text-[#64ffda]'>04. </span>Projects</p>
-           
+            {projects.map((project)=> (
             <div className='grid md:grid-cols-3 gap-8'>
                 <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-600 p-4 group hover:scale-105 ease-in duration-200'>
                     {/* <Image src='/' width='' height='' alt='' /> */}
@@ -26,6 +29,7 @@ export default function Projects() {
 
                 </div>
             </div>
+            ))}
       
             
 
@@ -34,6 +38,17 @@ export default function Projects() {
   )
 };
 
+export async function getServerSideProps(){
+
+    const res = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/projects')
+  
+    
+  
+    return{
+      props:{ data: res.data}
+    }
+  }
+  
 
 // export async function getServerSideProps(){
 

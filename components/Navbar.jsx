@@ -16,22 +16,23 @@ function Navbar() {
   return (
     <div className="fixed w-full h-20 shadow-xl z-[100]">
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-            <Image src="/../public/assets/vicd.png" alt="" width='200' height='150' />
+            <Link href='/'>
+            <Image src="/../public/assets/vicd.png" alt="" width='200' height='150' /></Link>
             <div>
                 <ul className='hidden md:flex'>
-                    <Link href='/'>
+                    <Link href='/#main'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>01. </span>Home</li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/#about'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>02. </span>About</li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/#skills'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>03. </span>Skills</li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/#projects'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>04. </span>Projects</li>
                     </Link>
@@ -39,11 +40,11 @@ function Navbar() {
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>05. </span>Resume</li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/#blogs'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>06. </span>Blogs</li>
                     </Link>
-                    <Link href='/'>
+                    <Link href='/#contact'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>07. </span>Contact</li>
                     </Link>
