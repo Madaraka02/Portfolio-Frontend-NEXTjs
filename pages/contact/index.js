@@ -1,22 +1,19 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import About from '../components/About'
-import Main from '../components/Main'
-import Navbar from '../components/Navbar'
-import Projects from '../components/Projects'
-import Skills from '../components/Skills'
-import styles from '../styles/Home.module.css'
+
+import styles from '../../styles/Home.module.css'
 import axios from 'axios'
 import Axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import Contact from '../components/Contact'
+
 import React, { useState } from 'react'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import { AiOutlineMail} from 'react-icons/ai';
 import { BsInstagram, BsTwitter } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import Navbar from '../../components/Navbar'
 
 
 
@@ -29,55 +26,55 @@ export default function Home(props) {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  // const submitHandler = async e =>{
-  //   e.preventDefault();
-
-  //   const res = await fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/',{
-  //       method: 'POST',
-  //       headers:{
-  //           'Content-Type':'application/json',
-
-  //       },
-  //       body: JSON.stringify({
-  //           name,
-  //           email,
-  //           message
-  //       })
-
-
-  //   })
-  // }
-
   const submitHandler = async e =>{
     e.preventDefault();
-    // console.log(name)
-    // const csrftoken = Cookies.get('csrftoken');
 
-    const config ={
+    await fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/',{
+        method: 'POST',
         headers:{
-            'Accept':'application/json',
             'Content-Type':'application/json',
-            // 'X-CSRFToken': csrftoken
-        }
-    }
-    const body = {
-        name,
-        email,
-        message
 
-    }
-    try{
+        },
+        body: JSON.stringify({
+            name,
+            email,
+            message
+        })
 
-    const res = Axios.post('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', body, config)
-    if(res.status === 200){
-         console.log(res)
-    }
 
-    } catch(err){
-        console.log(err)
+    })
+  }
 
-    }
-}
+//   const submitHandler = async e =>{
+//     e.preventDefault();
+//     // console.log(name)
+//     // const csrftoken = Cookies.get('csrftoken');
+
+//     const config ={
+//         headers:{
+//             'Accept':'application/json',
+//             'Content-Type':'application/json',
+//             // 'X-CSRFToken': csrftoken
+//         }
+//     }
+//     const body = {
+//         name,
+//         email,
+//         message
+
+//     }
+//     try{
+
+//     const res = Axios.post('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', body, config)
+//     if(res.status === 200){
+//          console.log(res)
+//     }
+
+//     } catch(err){
+//         console.log(err)
+
+//     }
+// }
   
   return (
     <div className={styles.container}>
@@ -87,74 +84,14 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
-      <Main/>
-      <About/>
-      <Skills/>
-      {/* <Projects /> */}
 
-      <div id='projects' className='w-full py-24 '>
-        <div className='max-w-[1240px] mx-auto px-2 py-8'>
-        <p className='text-xs uppercase text-[#3d3d3d]'> WHAT i have Created</p>
-        <p className='text-white py-4'>
-            <span className='text-[#64ffda]'>04. </span>Projects</p>
-           
-            <div className='grid md:grid-cols-3 gap-4'>
-            {projects.map((project)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl bg-slate-800 p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
-                onClick={() => router.push(`/projects/${project.slug}`)}>
-                    {/* <Image src='/' width='' height='' alt='' /> */}
-                    <div>
-                        <h3 className='text-2xl text-[#ccd6f6] tracking-wider text-center'>{project.title}</h3>
-                        <p className='pb-4 pt-2 text-[#ccd6f6] text-center'>{project.snippet} </p>
-                        <Link href='/'>
-                            <p className='text-sm cursor-pointer'>See More</p>
-                        </Link>
-                    </div>
-
-                </div>
-                 ))}
-            </div>
-           
-            
-
-        </div>
-        </div>
-
-        {/* BLOGS */}
-        <div id='blogs' className='w-full py-24'>
-        <div className='max-w-[1240px] mx-auto px-2 '>
-        <p className='text-xs uppercase text-[#3d3d3d]'> some of my articles</p>
-        <p className='text-white py-4'>
-            <span className='text-[#64ffda]'>05. </span>BLOGS</p>
-           
-            <div className='grid md:grid-cols-3 gap-4'>
-            {articles.map((article)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
-                onClick={() => router.push(`/blogs/${article.slug}`)}>
-                    {/* <Image src='/' width='' height='' alt='' /> */}
-                    <div>
-                        <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{article.title}</h3>
-                        <p className='pb-4 pt-2 text-[#cacdd8] text-center'>{article.content} </p>
-                        <Link href='/'>
-                            <p className='text-sm cursor-pointer'>See More</p>
-                        </Link>
-                    </div>
-
-                </div>
-                 ))}
-            </div>
-           
-            
-
-        </div>
-        </div>
         {/* <Contact/> */}
 
 
         <div id='contact' className='w-full lg:h-screen'>
         <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
         <p className='text-xs uppercase text-[#3d3d3d]'> Get in touch</p>
-                <p className='text-white py-4'><span className='text-[#64ffda]'>06. </span>Contact Me</p>
+                <p className='text-white py-4'><span className='text-[#64ffda]'>07. </span>Contact Me</p>
                 <div className="grid lg:grid-cols-5 gap-4">
 
                 <div className='col-span-3 lg:col-span-2 w-full border border-indigo-600  shadow-xl shadow-gray-900'>
@@ -253,32 +190,11 @@ export default function Home(props) {
 
 
 
-        {/* export const getStaticProps = async () => {
-  const res = await Axios.get("http://127.0.0.1:8000/victor/portfolio/api/v1/projects");
-
-  console.log(res.data)
-  return {
-    props: { data: res.data }
-  };
-}; */}
       
     </div>
   )
 }
 
-export async function getServerSideProps(){
 
-  const res = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/projects')
-  const reslt = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/blogs')
-
-
-  
-
-  return{
-    props:{ 
-      data: res.data,
-      blogs:reslt.data}
-  }
-}
 
 

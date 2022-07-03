@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiOutlineMail} from 'react-icons/ai';
+import { BsArrowDownRightCircle } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 function Main() {
@@ -28,6 +29,10 @@ function Main() {
                         <FaGithub />
                         </div>
 
+                </div>
+                <div className='flex items-center justify-between m-auto'>
+                {/* <button className='p-2 w-40 items-center justify-center mt-4 border border-green-600 shadow-lg hover:shadow-green-600' >Hire me</button> */}
+                <button className='p-2 w-40 items-center justify-center mt-4 border border-green-600 shadow-lg hover:shadow-green-600' >Download CV</button>
                 </div>
             </div>
         </div>

@@ -16,8 +16,12 @@ function Navbar() {
   return (
     <div className="fixed w-full h-20 shadow-xl z-[100]">
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
+        <div onClick={handleNav} className='md:hidden'>
+                    <AiOutlineMenu size={35}/>
+                </div>
+                <div className='invisible md:visible'>
             <Link href='/'>
-            <Image src="/../public/assets/vicd.png" alt="" width='200' height='150' /></Link>
+            <Image src="/../public/assets/vicd.png" alt="" width='200' height='150' /></Link></div>
             <div>
                 <ul className='hidden md:flex'>
                     <Link href='/#main'>
@@ -36,23 +40,23 @@ function Navbar() {
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>04. </span>Projects</li>
                     </Link>
-                    <Link href='/'>
+                    {/* <Link href='/'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>05. </span>Resume</li>
-                    </Link>
+                    </Link> */}
                     <Link href='/#blogs'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
-                    <span className='text-[#64ffda]'>06. </span>Blogs</li>
+                    <span className='text-[#64ffda]'>05. </span>Blogs</li>
                     </Link>
                     <Link href='/#contact'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
-                    <span className='text-[#64ffda]'>07. </span>Contact</li>
+                    <span className='text-[#64ffda]'>06. </span>Contact</li>
                     </Link>
 
                 </ul>
-                <div onClick={handleNav} className='md:hidden'>
-                    <AiOutlineMenu size={25}/>
-                </div>
+                {/* <div onClick={handleNav} className=''>
+                    <AiOutlineMenu size={35}/>
+                </div> */}
             </div>
         </div>
         <div className={nav ? 'md:hidden fixed left-0, top-0 w-full h-screen bg-[#233554]' : ''}>
@@ -67,30 +71,30 @@ function Navbar() {
             
             </div>
             <div className='border-b border-[#8892b0] my-4'>
-                <p className='text-[#64ffda] w-[85%] md:w-[90%]'>Lets build</p>
+                <p className='text-[#64ffda] w-[85%] md:w-[90%]'>Hey there enjoy</p>
             </div>
             </div>
             <div className='py-4 flex flex-col'>
                 <ul className='uppercase'>
-                <li className='py-4 text-sm'>
+                <li  onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/'>Home</Link>
                 </li>
-                <li className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/#about'>About</Link>
                 </li>
-                <li className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/#skills'>Skills</Link>
                 </li>
-                <li className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/#projects'>Projects</Link>
                 </li>
-                <li className='py-4 text-sm'>
+                {/* <li  onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/resume'>Resume</Link>
-                </li>
-                <li className='py-4 text-sm'>
+                </li> */}
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/resume'>Blogs</Link>
                 </li>
-                <li className='py-4 text-sm'>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/#contact'>Contact</Link>
                 </li>
                 </ul>

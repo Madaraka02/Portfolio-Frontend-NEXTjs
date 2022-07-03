@@ -165,7 +165,7 @@ function Contact() {
                                     
 
                                 </div>
-                                <button className='w-full p-4 mt-4 border border-green-600 shadow-lg hover:shadow-green-600' type='submit'>Send Message</button>
+                                <button className='w-full uppercase p-4 mt-4 border border-green-600 shadow-lg hover:shadow-green-600' type='submit'>Send Message</button>
 
                             </form>
 

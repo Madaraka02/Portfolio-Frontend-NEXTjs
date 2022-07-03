@@ -8,6 +8,7 @@ import Axios from 'axios'
 import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import { AiOutlineSelect } from 'react-icons/ai'
+import { BsArrowRightShort, BsArrowUpRightSquare } from 'react-icons/bs'
 
 
 
@@ -32,8 +33,10 @@ export default function ProjectPage({project}) {
                 <p className=' text-[#8892b0]  py-2 p-5 '>{project.description}</p>
                 <Link href={project.link}>
                 <div className='py-2 flex justify-items-start cursor-pointer '>
-                    <AiOutlineSelect size={30}/>
-                    <p className='p-5 ml-2'>View live link</p>
+                    {/* <AiOutlineSelect size={30}/> */}
+                    
+                    <p className='p-5  flex '>live demo 
+                    <span className='ml-2'><BsArrowRightShort size={30}/></span></p>
                 </div>
                 </Link>
  
