@@ -24,6 +24,7 @@ export default function Home(props) {
   const router =useRouter()
   const projects = props.data
   const articles = props.blogs
+  const services = props.works
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -170,13 +171,37 @@ export default function Home(props) {
 
         </div>
         </div>
+        {/* services */}
+        <div id='services' className='w-full py-24'>
+        <div className='max-w-[1240px] mx-auto px-2 '>
+        <p className='text-xs uppercase text-[#3d3d3d]'> what i can do</p>
+        <p className='text-white py-4'>
+            <span className='text-[#64ffda]'>06. </span>SERVICES</p>
+           
+            <div className='grid md:grid-cols-3 gap-4'>
+            {services.map((service)=> (
+                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
+                    {/* <Image src='/' width='' height='' alt='' /> */}
+                    <div>
+                        <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{service.title}</h3>
+                        <p className='pb-4 pt-2 text-[#cacdd8] text-center'>{service.description} </p>
+                    </div>
+
+                </div>
+                 ))}
+            </div>
+           
+            
+
+        </div>
+        </div>
         {/* <Contact/> */}
 
 
         <div id='contact' className='w-full lg:h-screen'>
         <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
         <p className='text-xs uppercase text-[#3d3d3d]'> Get in touch</p>
-                <p className='text-white py-4'><span className='text-[#64ffda]'>06. </span>Contact Me</p>
+                <p className='text-white py-4'><span className='text-[#64ffda]'>07. </span>Contact Me</p>
                 <div className="grid lg:grid-cols-5 gap-4">
 
                 <div className='col-span-3 lg:col-span-2 w-full border border-indigo-600  shadow-xl shadow-gray-900'>
@@ -295,6 +320,7 @@ export async function getServerSideProps(){
 
   const res = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/projects')
   const reslt = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/blogs')
+  const resu = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/services')
 
 
   
@@ -302,8 +328,8 @@ export async function getServerSideProps(){
   return{
     props:{ 
       data: res.data,
-      blogs:reslt.data}
+      blogs:reslt.data,
+      works:resu.data,
+    }
   }
 }
-
-

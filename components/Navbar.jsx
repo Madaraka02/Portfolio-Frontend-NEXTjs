@@ -48,9 +48,13 @@ function Navbar() {
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
                     <span className='text-[#64ffda]'>05. </span>Blogs</li>
                     </Link>
+                    <Link href='/#services'>
+                    <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
+                    <span className='text-[#64ffda]'>06. </span>Services</li>
+                    </Link>
                     <Link href='/#contact'>
                     <li className='ml-10 text-sm  hover:border-b text-[#8892b0]'>
-                    <span className='text-[#64ffda]'>06. </span>Contact</li>
+                    <span className='text-[#64ffda]'>07. </span>Contact</li>
                     </Link>
 
                 </ul>
@@ -92,7 +96,10 @@ function Navbar() {
                 <Link href='/resume'>Resume</Link>
                 </li> */}
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                <Link href='/resume'>Blogs</Link>
+                <Link href='/#blogs'>Blogs</Link>
+                </li>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
+                <Link href='/#services'>Services</Link>
                 </li>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
                 <Link href='/#contact'>Contact</Link>
