@@ -28,27 +28,48 @@ export default function Home(props) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
-  // const submitHandler = async e =>{
-  //   e.preventDefault();
+  const submitHand = async (e) =>{
+    e.preventDefault();
+    const options = {
+        method: "POST",
+        body: JSON.stringify({
+            name,
+            email,
+            message
+        }),
+        headers:{
+            'Content-Type':'application/json',
 
-  //   const res = await fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/',{
-  //       method: 'POST',
-  //       headers:{
-  //           'Content-Type':'application/json',
+        }
 
-  //       },
-  //       body: JSON.stringify({
-  //           name,
-  //           email,
-  //           message
-  //       })
+    }
+    fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', options).
+    then(res=>res.json()).then(response=> {
+        setName('')
+        setEmail('')
+        setMessage('')
+        setSubmitted(true)
+    }).catch(error=>console.log(error))
+
+    // const res = await fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/',{
+    //     method: 'POST',
+    //     headers:{
+    //         'Content-Type':'application/json',
+
+    //     },
+    //     body: JSON.stringify({
+    //         name,
+    //         email,
+    //         message
+    //     })
 
 
-  //   })
-  // }
+    // })
+  }
 
-  const submitHandler = async e =>{
+  const submitHandler = async (e) =>{
     e.preventDefault();
     // console.log(name)
     // const csrftoken = Cookies.get('csrftoken');
@@ -70,7 +91,8 @@ export default function Home(props) {
 
     const res = Axios.post('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', body, config)
     if(res.status === 200){
-         console.log(res)
+        console.log(res)
+        setSubmitted(true)
     }
 
     } catch(err){
@@ -199,13 +221,16 @@ export default function Home(props) {
                         
                     </div>
                     {/* right */}
+                   
                         <div className='col-span-3 w-full h-auto border border-indigo-600 shadow-xl  lg:p-4'>
+                        {/* { submitted ? alert('Thank you I have received your message and will get back ASAP'):''} */}
                         <div className='p-4'>
-                            <form onSubmit={submitHandler}>
+                        
+                            <form onSubmit={submitHand}>
                                 <div className='grid md:grid-cols gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Name</label>
-                                        <input className='border-2 p-3 flex border-indigo-500' type="text" 
+                                        <input className='border-2 p-3 flex border-indigo-500 text-[#111]' type="text" 
                                         onChange={e => setName(e.target.value)}
                                         value={name}/>
 
@@ -213,7 +238,7 @@ export default function Home(props) {
 
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Email</label>
-                                        <input className='border-2 p-3 flex border-indigo-500' type="email" 
+                                        <input className='border-2 p-3 flex border-indigo-500 text-[#111]'  required type="email" 
                                         onChange={e => setEmail(e.target.value)}
                                         value={email}/>
 
@@ -221,7 +246,7 @@ export default function Home(props) {
 
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Message</label>
-                                        <textarea className='border-2 text-[#111] p-3 flex border-indigo-500' rows='10' 
+                                        <textarea className='border-2 text-[#111] p-3 flex border-indigo-500' required rows='10' 
                                         onChange={e => setMessage(e.target.value)}
                                         value={message}></textarea>
 
