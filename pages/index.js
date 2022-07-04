@@ -32,6 +32,8 @@ export default function Home(props) {
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
+  const apiUrl = 'http://127.0.0.1:8000/victor/portfolio/api/v1'
+
   const submitHand = async (e) =>{
     e.preventDefault();
     const options = {
@@ -47,7 +49,7 @@ export default function Home(props) {
         }
 
     }
-    fetch('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', options).
+    fetch(`${apiUrl}/messages/create/`, options).
     then(res=>res.json()).then(response=> {
         setName('')
         setEmail('')
@@ -346,11 +348,12 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(){
+  const apiUrl = 'http://127.0.0.1:8000/victor/portfolio/api/v1'
 
-  const res = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/projects')
-  const reslt = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/blogs')
-  const resu = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/services')
-  const ress = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/skills')
+  const res = await Axios.get(`${apiUrl}/projects`)
+  const reslt = await Axios.get(`${apiUrl}/blogs`)
+  const resu = await Axios.get(`${apiUrl}/services`)
+  const ress = await Axios.get(`${apiUrl}/skills`)
   
 
 

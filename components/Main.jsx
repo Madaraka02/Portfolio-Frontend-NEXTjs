@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { AiOutlineMail} from 'react-icons/ai';
 import { BsArrowDownRightCircle } from 'react-icons/bs';
@@ -19,20 +20,25 @@ function Main() {
                 Seeking to leverage broad development experience and hands-on technical expertise in a challenging role as a Full-stack Developer.
                 </p>
                 <div className='flex  items-center justify-between m-auto py-4 max-w-[330px]'>
+                  <Link href='https://www.linkedin.com/in/victormadaraka/'>
                 <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaLinkedinIn />
                         </div>
-                        <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                        </Link>
+                        <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'
+                        onClick={()=> alert('victormadaraka@gmail.com')}>
                         <AiOutlineMail />
                         </div>
+                        <Link href='https://github.com/Madaraka02/'>
                         <div className='rounded-full shadow-lg shadow-[#b5c0e0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaGithub />
                         </div>
+                        </Link>
 
                 </div>
                 <div className='flex items-center justify-between m-auto'>
                 {/* <button className='p-2 w-40 items-center justify-center mt-4 border border-green-600 shadow-lg hover:shadow-green-600' >Hire me</button> */}
-                <button className='p-2 w-40 items-center justify-center mt-4 border border-green-600 shadow-lg hover:shadow-green-600' >Download CV</button>
+                {/* <button className='p-2 w-40 items-center justify-center mt-4 border border-green-600 shadow-lg hover:shadow-green-600' >Download CV</button> */}
                 </div>
             </div>
         </div>
