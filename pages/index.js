@@ -142,13 +142,37 @@ export default function Home(props) {
 
         </div>
         </div>
+                {/* services */}
+                <div id='services' className='w-full py-24'>
+        <div className='max-w-[1240px] mx-auto px-2 '>
+        <p className='text-xs uppercase text-[#3d3d3d]'> what i can do</p>
+        <p className='text-white py-4'>
+            <span className='text-[#64ffda]'>05. </span>SERVICES</p>
+           
+            <div className='grid md:grid-cols-3 gap-4'>
+            {services.map((service)=> (
+                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
+                    {/* <Image src='/' width='' height='' alt='' /> */}
+                    <div>
+                        <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{service.title}</h3>
+                        <p className='pb-4 pt-2 text-[#cacdd8] text-center'>{service.description} </p>
+                    </div>
+
+                </div>
+                 ))}
+            </div>
+           
+            
+
+        </div>
+        </div>
 
         {/* BLOGS */}
         <div id='blogs' className='w-full py-24'>
         <div className='max-w-[1240px] mx-auto px-2 '>
         <p className='text-xs uppercase text-[#3d3d3d]'> some of my articles</p>
         <p className='text-white py-4'>
-            <span className='text-[#64ffda]'>05. </span>BLOGS</p>
+            <span className='text-[#64ffda]'>06. </span>BLOGS</p>
            
             <div className='grid md:grid-cols-3 gap-4'>
             {articles.map((article)=> (
@@ -171,30 +195,7 @@ export default function Home(props) {
 
         </div>
         </div>
-        {/* services */}
-        <div id='services' className='w-full py-24'>
-        <div className='max-w-[1240px] mx-auto px-2 '>
-        <p className='text-xs uppercase text-[#3d3d3d]'> what i can do</p>
-        <p className='text-white py-4'>
-            <span className='text-[#64ffda]'>06. </span>SERVICES</p>
-           
-            <div className='grid md:grid-cols-3 gap-4'>
-            {services.map((service)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
-                    {/* <Image src='/' width='' height='' alt='' /> */}
-                    <div>
-                        <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{service.title}</h3>
-                        <p className='pb-4 pt-2 text-[#cacdd8] text-center'>{service.description} </p>
-                    </div>
 
-                </div>
-                 ))}
-            </div>
-           
-            
-
-        </div>
-        </div>
         {/* <Contact/> */}
 
 
