@@ -25,6 +25,7 @@ export default function Home(props) {
   const projects = props.data
   const articles = props.blogs
   const services = props.works
+  const skills = props.knows
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -112,7 +113,34 @@ export default function Home(props) {
       <Navbar/>
       <Main/>
       <About/>
-      <Skills/>
+      {/* <Skills/> */}
+
+      <div id='skills' className='w-full mb-10 mt-10 py-20 p-2'>
+        <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
+            <p className='text-xs uppercase text-[#3d3d3d]'> WHAT i can do</p>
+        <p className='text-white py-4'>
+            <span className='text-[#64ffda]'>03. </span>Skills</p>
+            <div className='grid md:grid-cols-6 gap-4'>
+            {skills.map((skill)=> (
+
+                <div className='p-6 shadow-lg hover:scale-105 ease-in duration-200 shadow-gray-500 hover:shadow-red-500 '>
+                    <div className='grid grid-cols-2 justify-center items-center'>
+                        <div className='m-auto'>
+                            <Image src={skill.logo} width='64px' height='64px' alt={skill.name} />
+
+                        </div>
+                        <div className='flex flex-col items-center justify-center'>
+                            <h3>{skill.name}</h3>
+                        </div>
+                    </div>
+                </div>
+                ))}
+                
+
+            </div>
+        </div>
+
+    </div>
       {/* <Projects /> */}
 
       <div id='projects' className='w-full py-24 '>
@@ -151,7 +179,7 @@ export default function Home(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {services.map((service)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
+                <div className='relative flex items-center justify-center  shadow-gray-500 h-auto w-full shadow-lg  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>
                         <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{service.title}</h3>
@@ -322,6 +350,8 @@ export async function getServerSideProps(){
   const res = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/projects')
   const reslt = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/blogs')
   const resu = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/services')
+  const ress = await Axios.get('http://127.0.0.1:8000/victor/portfolio/api/v1/skills')
+  
 
 
   
@@ -331,6 +361,7 @@ export async function getServerSideProps(){
       data: res.data,
       blogs:reslt.data,
       works:resu.data,
+      knows:ress.data
     }
   }
 }
