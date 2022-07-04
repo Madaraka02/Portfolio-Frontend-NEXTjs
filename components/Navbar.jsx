@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { BsFillPersonLinesFill, BsInstagram } from 'react-icons/bs';
 
 function Navbar() {
     const [nav, setNav] = useState(false)
@@ -110,18 +110,24 @@ function Navbar() {
                 <div className='pt-40'>
                     <p className='uppercase tracking-widest'>Lets Connect</p>
                     <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
+                    <Link href='https://www.linkedin.com/in/victormadaraka/'>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaLinkedinIn />
                         </div>
+                        </Link>
+                        <Link href='https://github.com/Madaraka02/'>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaGithub />
                         </div>
+                        </Link>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <AiOutlineMail />
                         </div>
+                        <Link href='https://www.instagram.com/victor_madaraka/'>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                        <BsFillPersonLinesFill />
+                        <BsInstagram />
                         </div>
+                        </Link>
                     
                     </div>
                 </div>

@@ -250,22 +250,30 @@ export default function Home(props) {
                         
 
                         <div className='flex  items-center justify-between  py-4 max-w-[330px]'>
+                        <Link href='https://www.linkedin.com/in/victormadaraka/'>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaLinkedinIn />
                         </div>
+                        </Link>
                         <div className='rounded-full shadow-lg shadow-[#8892b0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <AiOutlineMail />
                         </div>
+                        <Link href='https://www.instagram.com/victor_madaraka/'>
                         <div className='rounded-full shadow-lg shadow-[#b5c0e0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <BsInstagram/>
                         </div>
+                        </Link>
+                        <Link href='https://twitter.com/254Effect'>
 
                         <div className='rounded-full shadow-lg shadow-[#b5c0e0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <BsTwitter/>
                         </div>
+                        </Link>
+                        <Link href='https://github.com/Madaraka02/'>
                         <div className='rounded-full shadow-lg shadow-[#b5c0e0] p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                         <FaGithub />
                         </div>
+                        </Link>
 
 
                         </div>
