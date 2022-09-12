@@ -14,7 +14,7 @@ function Navbar() {
     }
 
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className="fixed w-11/12 h-20 shadow-xl z-[100]">
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div onClick={handleNav} className='md:hidden'>
                     <AiOutlineMenu size={35}/>
@@ -107,7 +107,7 @@ function Navbar() {
                 <Link href='/#contact'>Contact</Link>
                 </li>
                 </ul>
-                <div className='pt-40'>
+                <div className='pt-24 md:pt-40'>
                     <p className='uppercase tracking-widest'>Lets Connect</p>
                     <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
                     <Link href='https://www.linkedin.com/in/victormadaraka/'>
