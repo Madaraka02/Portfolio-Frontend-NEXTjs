@@ -73,7 +73,7 @@ function Contact() {
         }
         try{
 
-        const res = Axios.post('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', body, config)
+        const res = Axios.post('https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1/messages/create/', body, config)
         if(res.status === 200){
              console.log(res)
         }

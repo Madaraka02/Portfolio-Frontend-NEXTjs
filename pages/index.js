@@ -32,7 +32,7 @@ export default function Home(props) {
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const apiUrl = 'http://127.0.0.1:8000/victor/portfolio/api/v1'
+  const apiUrl = 'https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1'
 
   const submitHand = async (e) =>{
     e.preventDefault();
@@ -93,7 +93,7 @@ export default function Home(props) {
     }
     try{
 
-    const res = Axios.post('http://127.0.0.1:8000/victor/portfolio/api/v1/messages/create/', body, config)
+    const res = Axios.post('https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1/messages/create/', body, config)
     if(res.status === 200){
         console.log(res)
         setSubmitted(true)
@@ -356,7 +356,7 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(){
-  const apiUrl = 'http://127.0.0.1:8000/victor/portfolio/api/v1'
+  const apiUrl = 'https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1'
 
   const res = await Axios.get(`${apiUrl}/projects`)
   const reslt = await Axios.get(`${apiUrl}/blogs`)

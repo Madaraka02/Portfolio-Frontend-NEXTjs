@@ -54,7 +54,7 @@ export default function BlogPage({blog}) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-    const { data } = await Axios.get(`http://127.0.0.1:8000/victor/portfolio/api/v1/blogs/${params.slug}`);
+    const { data } = await Axios.get(`https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1/blogs/${params.slug}`);
   
     if (!data) {
       return {
