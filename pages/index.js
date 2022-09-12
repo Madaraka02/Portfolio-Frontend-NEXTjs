@@ -242,7 +242,7 @@ export default function Home(props) {
                             </div>
                             <div className='pt-48'>
                                 <h2 className='py-2 text-white'>Victor Madaraka</h2>
-                                <p className='text-[#3d3d3d]'>Full-Stack Developer</p>
+                                <p className='text-[#949393]'>Full-Stack Developer</p>
 
                             </div>
                             <div>
