@@ -294,7 +294,7 @@ export default function Home(props) {
                                 <div className='grid md:grid-cols gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Name</label>
-                                        <input className='border-2 p-3 flex border-indigo-500 text-[#111]' type="text" 
+                                        <input className='border-2 p-3 flex border-indigo-500 outline-none text-[#111]' type="text" 
                                         onChange={e => setName(e.target.value)}
                                         value={name}/>
 
@@ -302,7 +302,7 @@ export default function Home(props) {
 
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Email</label>
-                                        <input className='border-2 p-3 flex border-indigo-500 text-[#111]'  required type="email" 
+                                        <input className='border-2 p-3 flex border-indigo-500 text-[#111] outline-none'  required type="email" 
                                         onChange={e => setEmail(e.target.value)}
                                         value={email}/>
 
@@ -310,7 +310,7 @@ export default function Home(props) {
 
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Message</label>
-                                        <textarea className='border-2 text-[#111] p-3 flex border-indigo-500' required rows='10' 
+                                        <textarea className='border-2 text-[#111] p-3 flex border-indigo-500 outline-none' required rows='10' 
                                         onChange={e => setMessage(e.target.value)}
                                         value={message}></textarea>
 
@@ -318,7 +318,7 @@ export default function Home(props) {
                                     
 
                                 </div>
-                                <button className='w-full p-4 mt-4 border border-green-600 shadow-lg hover:shadow-green-600' type='submit'>Send Message</button>
+                                <button className='w-full p-4 mt-4 border border-green-600 shadow-lg outline-none hover:shadow-green-600' type='submit'>Send Message</button>
 
                             </form>
 
