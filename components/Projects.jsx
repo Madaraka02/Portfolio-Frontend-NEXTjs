@@ -40,7 +40,7 @@ export default function Projects(props) {
 
 export async function getServerSideProps(){
 
-    const res = await Axios.get('https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1/projects')
+    const res = await Axios.get('https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1/projects')
   
     
   
