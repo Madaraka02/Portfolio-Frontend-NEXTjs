@@ -32,7 +32,7 @@ export default function Blogs(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {projects.map((project)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl bg-slate-800 p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
+                <div  key={project.id} className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl bg-slate-800 p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
                 onClick={() => router.push(`/projects/${project.slug}`)}>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>
@@ -61,7 +61,7 @@ export default function Blogs(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {projects.map((project)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
+                <div key={project.id} className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
                 onClick={() => router.push(`/projects/${project.slug}`)}>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>

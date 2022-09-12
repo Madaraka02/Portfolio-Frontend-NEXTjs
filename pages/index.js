@@ -121,11 +121,11 @@ export default function Home(props) {
         <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
             <p className='text-xs uppercase text-[#3d3d3d]'> WHAT i can do</p>
         <p className='text-white py-4'>
-            <span className='text-[#64ffda]'>03. </span>Skills</p>
+            <span className='text-[#c7f3e9]'>03. </span>Skills</p>
             <div className='grid md:grid-cols-6 gap-4'>
             {skills.map((skill)=> (
 
-                <div className='p-6 shadow-lg hover:scale-105 ease-in duration-200 shadow-gray-500 hover:shadow-red-500 '>
+                <div key={skill.id} className='p-6 shadow-lg hover:scale-105 ease-in duration-200 shadow-gray-500 hover:shadow-red-500 '>
                     <div className='grid grid-cols-2 justify-center items-center'>
                         <div className='m-auto'>
                             <Image src={skill.logo} width='64px' height='64px' alt={skill.name} />
@@ -153,7 +153,7 @@ export default function Home(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {projects.map((project)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl bg-slate-800 p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
+                <div key={project.id} className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl bg-slate-800 p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
                 onClick={() => router.push(`/projects/${project.slug}`)}>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>
@@ -181,7 +181,7 @@ export default function Home(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {services.map((service)=> (
-                <div className='relative flex items-center justify-center  shadow-gray-500 h-auto w-full shadow-lg  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
+                <div  key={service.id} className='relative flex items-center justify-center  shadow-gray-500 h-auto w-full shadow-lg  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>
                         <h3 className='text-2xl text-[#3b5dce] tracking-wider text-center'>{service.title}</h3>
@@ -206,7 +206,7 @@ export default function Home(props) {
            
             <div className='grid md:grid-cols-3 gap-4'>
             {articles.map((article)=> (
-                <div className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
+                <div key={article.id} className='relative flex items-center justify-center border border-indigo-600 h-auto w-full shadow-2xl  p-4 group hover:scale-105 ease-in duration-200 cursor-pointer'
                 onClick={() => router.push(`/blogs/${article.slug}`)}>
                     {/* <Image src='/' width='' height='' alt='' /> */}
                     <div>
