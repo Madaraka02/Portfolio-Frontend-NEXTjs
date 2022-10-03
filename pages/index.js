@@ -32,7 +32,7 @@ export default function Home(props) {
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const apiUrl = 'https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1'
+  const apiUrl = 'https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1'
 
   const submitHand = async (e) =>{
     e.preventDefault();

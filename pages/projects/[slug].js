@@ -57,7 +57,7 @@ export default function ProjectPage({project}) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-    const { data } = await Axios.get(`https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1/projects/${params.slug}`);
+    const { data } = await Axios.get(`https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1/projects/${params.slug}`);
   
     if (!data) {
       return {

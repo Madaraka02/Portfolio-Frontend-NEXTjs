@@ -54,7 +54,7 @@ export default function BlogPage({blog}) {
 }
 
 export const getServerSideProps = async ({ params }) => {
-    const { data } = await Axios.get(`https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1/blogs/${params.slug}`);
+    const { data } = await Axios.get(`https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1/blogs/${params.slug}`);
   
     if (!data) {
       return {

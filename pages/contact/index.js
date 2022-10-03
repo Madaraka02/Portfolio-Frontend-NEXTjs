@@ -29,7 +29,7 @@ export default function Home(props) {
   const submitHandler = async e =>{
     e.preventDefault();
 
-    await fetch('https://d384-105-55-176-202.in.ngrok.io/victor/portfolio/api/v1/messages/create/',{
+    await fetch('https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1/messages/create/',{
         method: 'POST',
         headers:{
             'Content-Type':'application/json',

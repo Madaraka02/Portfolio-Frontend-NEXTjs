@@ -73,7 +73,7 @@ function Contact() {
         }
         try{
 
-        const res = Axios.post('https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1/messages/create/', body, config)
+        const res = Axios.post('https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1/messages/create/', body, config)
         if(res.status === 200){
              console.log(res)
         }
