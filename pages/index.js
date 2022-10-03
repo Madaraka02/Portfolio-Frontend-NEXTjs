@@ -93,7 +93,7 @@ export default function Home(props) {
     }
     try{
 
-    const res = Axios.post('https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1/messages/create/', body, config)
+    const res = Axios.post('https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1/messages/create/', body, config)
     if(res.status === 200){
         console.log(res)
         setSubmitted(true)
@@ -356,7 +356,7 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(){
-  const apiUrl = 'https://portfolio-api-production-0b44.up.railway.app/victor/portfolio/api/v1'
+  const apiUrl = 'https://victor-madaraka-api.up.railway.app/victor/portfolio/api/v1'
 
   const res = await Axios.get(`${apiUrl}/projects`)
   const reslt = await Axios.get(`${apiUrl}/blogs`)
